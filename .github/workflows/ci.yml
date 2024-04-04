@@ -14,6 +14,9 @@ jobs:
         with:
           node-version: "12"
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Build Post Review
         if: github.event_name == 'push'
         run: npm run build
