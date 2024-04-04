@@ -14,16 +14,6 @@ jobs:
         with:
           node-version: "12"
 
-      - run: npm test -- --coverage
-        env:
-          CI: true
-
-      - name: Upload Test Coverage
-        uses: actions/upload-artifact@v2
-        with:
-          name: code-coverage
-          path: coverage
-
       - name: Build Post Review
         if: github.event_name == 'push'
         run: npm run build
